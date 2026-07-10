@@ -4,6 +4,9 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import NavigationBar from './components/NavigationBar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AddPet from './components/AddPet'
+import ViewPet from './components/ViewPet'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,8 +14,13 @@ function App() {
   return (
     <>
 
-      <NavigationBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<AddPet />} />
+          <Route path='/view' element={<ViewPet />} />
 
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
